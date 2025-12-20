@@ -77,6 +77,10 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     
     // Handle file selection
     connect(fileList, &QListWidget::itemClicked, this, &CustomExportDock::onFileClicked);
+    
+    // Enable context menu
+    fileList->setContextMenuPolicy(Qt::CustomContextMenu);
+    connect(fileList, &QListWidget::customContextMenuRequested, this, &CustomExportDock::showContextMenu);
 
     // File System Watcher
     fileWatcher = new QFileSystemWatcher(this);
@@ -186,4 +190,50 @@ void CustomExportDock::onFileClicked(QListWidgetItem *item) {
     QString name = item->text();
     QFileInfo fi(name);
     filenameEdit->setText(fi.completeBaseName());
+}
+
+void CustomExportDock::showContextMenu(const QPoint &pos) {
+    QListWidgetItem *item = fileList->itemAt(pos);
+    if (!item) return;
+
+    QMenu contextMenu(tr("Context menu"), this);
+    QAction *renameAction = new QAction(tr("Rename"), this);
+    connect(renameAction, &QAction::triggered, this, [this, item]() {
+        renameFile(item);
+    });
+    contextMenu.addAction(renameAction);
+    contextMenu.exec(fileList->mapToGlobal(pos));
+}
+
+void CustomExportDock::renameFile(QListWidgetItem *item) {
+    if (!item) return;
+    
+    QString oldName = item->text();
+    QString path = pathEdit->text();
+    QDir dir(path);
+    QString oldPath = dir.filePath(oldName);
+
+    bool ok;
+    QString newName = QInputDialog::getText(this, tr("Rename File"),
+                                          tr("New name:"), QLineEdit::Normal,
+                                          oldName, &ok);
+    
+    if (ok && !newName.isEmpty() && newName != oldName) {
+        QString newPath = dir.filePath(newName);
+        
+        if (QFile::exists(newPath)) {
+            QMessageBox::warning(this, tr("Rename Failed"), tr("A file with that name already exists."));
+            return;
+        }
+
+        if (dir.rename(oldName, newName)) {
+            // Update the filename edit if we just renamed the selected file
+            if (filenameEdit->text() == QFileInfo(oldName).completeBaseName()) {
+                 filenameEdit->setText(QFileInfo(newName).completeBaseName());
+            }
+            // File watcher handles the list update
+        } else {
+            QMessageBox::critical(this, tr("Rename Failed"), tr("Could not rename the file. Check permissions."));
+        }
+    }
 }

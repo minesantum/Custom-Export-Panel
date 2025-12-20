@@ -11,6 +11,10 @@
 #include <QStandardPaths>
 #include <QListWidget>
 #include <QFileSystemWatcher>
+#include <QMenu>
+#include <QAction>
+#include <QInputDialog>
+#include <QMessageBox>
 
 class CustomExportDock : public QDockWidget {
     Q_OBJECT
@@ -34,6 +38,8 @@ private slots:
     void checkFileExists();
     void onFileClicked(QListWidgetItem *item);
     void onDirectoryChanged(const QString &path);
+    void showContextMenu(const QPoint &pos);
+    void renameFile(QListWidgetItem *item);
 
 private:
     QLineEdit *pathEdit;
