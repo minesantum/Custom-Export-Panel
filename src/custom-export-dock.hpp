@@ -26,9 +26,11 @@ signals:
 private slots:
     void handleBrowse();
     void onTextChanged();
+    void checkFileExists();
 
 private:
     QLineEdit *pathEdit;
     QLineEdit *filenameEdit;
     QPushButton *browseBtn;
+    QLabel *warningLabel;
 };

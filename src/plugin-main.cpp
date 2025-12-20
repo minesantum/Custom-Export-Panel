@@ -11,6 +11,8 @@
 #include <QAction>
 #include <QFile>
 #include <QFileInfo>
+#include <QMessageBox>
+#include <QRegularExpression>
 
 OBS_DECLARE_MODULE()
 
@@ -138,9 +140,21 @@ void frontend_event(enum obs_frontend_event event, void *data) {
         QFileInfo mostRecent = files.first();
         QString oldPath = mostRecent.absoluteFilePath();
         
-        // Construir el nuevo nombre
+        // Obtener el timestamp del archivo original (formato: 2025-12-20 11-42-23)
+        QString originalName = mostRecent.baseName(); // Sin extensión
+        QString timestamp = originalName; // Por defecto usar el nombre original
+        
+        // Intentar extraer el timestamp del nombre del archivo de OBS
+        // Formato típico: "2025-12-20 11-42-23"
+        QRegularExpression timestampRegex("(\\d{4}-\\d{2}-\\d{2} \\d{2}-\\d{2}-\\d{2})");
+        QRegularExpressionMatch match = timestampRegex.match(originalName);
+        if (match.hasMatch()) {
+            timestamp = match.captured(1);
+        }
+        
+        // Construir el nuevo nombre con formato: "YYYY-MM-DD HH-MM-SS - nombre"
         QString extension = mostRecent.suffix();
-        QString newFileName = customName;
+        QString newFileName = timestamp + " - " + customName;
         if (!newFileName.endsWith("." + extension, Qt::CaseInsensitive)) {
             newFileName += "." + extension;
         }
@@ -150,6 +164,12 @@ void frontend_event(enum obs_frontend_event event, void *data) {
         blog(LOG_INFO, "[CustomExport] Renaming recording:");
         blog(LOG_INFO, "[CustomExport]   From: %s", oldPath.toUtf8().constData());
         blog(LOG_INFO, "[CustomExport]   To:   %s", newPath.toUtf8().constData());
+        
+        // Si el archivo de destino existe, eliminarlo primero
+        if (QFile::exists(newPath)) {
+            blog(LOG_INFO, "[CustomExport] Removing existing file before rename");
+            QFile::remove(newPath);
+        }
         
         // Renombrar el archivo
         QFile file(oldPath);
