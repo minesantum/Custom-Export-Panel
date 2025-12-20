@@ -197,7 +197,7 @@ bool obs_module_load(void) {
     blog(LOG_INFO, "[CustomExport] Registering dock with OBS...");
     
     // Usar add_dock_by_id que añade automáticamente al menú
-    obs_frontend_add_dock_by_id("CustomExportPanel", "Panel de Exportación Personalizado", exportDock);
+    obs_frontend_add_dock_by_id("CustomExportPanel", "Custom Export Panel", exportDock);
     
     blog(LOG_INFO, "[CustomExport] Dock registered successfully");
     

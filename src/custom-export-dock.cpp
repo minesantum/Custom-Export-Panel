@@ -6,7 +6,7 @@
 #include <QStandardPaths>
 
 CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
-    setWindowTitle("Panel de Exportación Personalizado");
+    setWindowTitle("Custom Export Panel");
     setObjectName("CustomExportPanel"); // Internal name for saving state
     
     // Configurar features para que respete el bloqueo de paneles
@@ -21,7 +21,7 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     QVBoxLayout *layout = new QVBoxLayout(content);
 
     // Export Path
-    QLabel *pathLabel = new QLabel("Ruta de exportación", content);
+    QLabel *pathLabel = new QLabel("Export Path", content);
     layout->addWidget(pathLabel);
 
     QHBoxLayout *pathLayout = new QHBoxLayout();
@@ -38,7 +38,7 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     layout->addLayout(pathLayout);
 
     // Filename
-    QLabel *fileLabel = new QLabel("Nombre del archivo", content);
+    QLabel *fileLabel = new QLabel("File Name", content);
     layout->addWidget(fileLabel);
 
     filenameEdit = new QLineEdit(content);
@@ -76,7 +76,7 @@ QString CustomExportDock::getFileName() const {
 }
 
 void CustomExportDock::handleBrowse() {
-    QString dir = QFileDialog::getExistingDirectory(this, "Seleccionar Ruta", pathEdit->text());
+    QString dir = QFileDialog::getExistingDirectory(this, "Select Path", pathEdit->text());
     if (!dir.isEmpty()) {
         pathEdit->setText(dir);
     }
@@ -123,7 +123,7 @@ void CustomExportDock::checkFileExists() {
     
     // Verificar si existe
     if (QFile::exists(fullPath)) {
-        warningLabel->setText(QString("⚠ El archivo '%1' ya existe y será sobrescrito").arg(fullFilename));
+        warningLabel->setText(QString("⚠ File '%1' already exists and will be overwritten").arg(fullFilename));
         warningLabel->show();
     } else {
         warningLabel->hide();
