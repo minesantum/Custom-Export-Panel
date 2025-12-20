@@ -1,0 +1,26 @@
+# Configuración del Plugin Custom Export Panel
+# Creado por: DonKolia
+#
+# INSTRUCCIONES:
+# 1. Edita este archivo con tus rutas preferidas
+# 2. Guárdalo en: %APPDATA%\obs-studio\plugin_config\custom-export-panel\export_config.ini
+# 3. Reinicia OBS
+#
+# FORMATO:
+# - Las líneas que empiezan con # son comentarios
+# - Usa barras normales (/) o dobles barras invertidas (\\) en las rutas
+# - Si dejas export_path vacío, OBS usará su ruta por defecto
+
+# Ruta donde se guardarán las grabaciones
+# Ejemplo: C:/Users/TuUsuario/Videos/Grabaciones
+# Ejemplo: D:\\Mis Grabaciones\\OBS
+export_path=
+
+# Nombre base del archivo (sin extensión)
+# Se añadirá automáticamente la extensión configurada en OBS
+filename=recording
+
+# Extensión del archivo (opcional, déjalo vacío para auto-detectar)
+# Valores comunes: mkv, mp4, flv, mov
+# Si está vacío, se usa la extensión configurada en OBS
+extension=

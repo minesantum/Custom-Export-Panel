@@ -1,0 +1,3 @@
+C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/custom-export-panel.dir
+C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/ZERO_CHECK.dir

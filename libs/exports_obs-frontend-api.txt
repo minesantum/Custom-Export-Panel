@@ -1,0 +1,126 @@
+Microsoft (R) COFF/PE Dumper Version 14.44.35222.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+
+Dump of file C:\Users\DonKolia\Downloads\obs-studio-windows-x64-407944a27\obs-studio-32.0.4-407944a27-windows-x64\bin\64bit\obs-frontend-api.dll
+
+File Type: DLL
+
+  Section contains the following exports for obs-frontend-api.dll
+
+    00000000 characteristics
+    8BC3A675 time date stamp
+        0.00 version
+           1 ordinal base
+          96 number of functions
+          96 number of names
+
+    ordinal hint RVA      name
+
+          1    0 000010F0 ?obs_frontend_set_callbacks_internal@@YAXPEAUobs_frontend_callbacks@@@Z = @ILT+235(?obs_frontend_set_callbacks_internal@@YAXPEAUobs_frontend_callbacks@@@Z)
+          2    1 000012A8 obs_frontend_add_canvas = @ILT+675(obs_frontend_add_canvas)
+          3    2 000011EF obs_frontend_add_custom_qdock = @ILT+490(obs_frontend_add_custom_qdock)
+          4    3 00001055 obs_frontend_add_dock_by_id = @ILT+80(obs_frontend_add_dock_by_id)
+          5    4 000013C5 obs_frontend_add_event_callback = @ILT+960(obs_frontend_add_event_callback)
+          6    5 00001203 obs_frontend_add_preload_callback = @ILT+510(obs_frontend_add_preload_callback)
+          7    6 000012C1 obs_frontend_add_save_callback = @ILT+700(obs_frontend_add_save_callback)
+          8    7 00001262 obs_frontend_add_scene_collection = @ILT+605(obs_frontend_add_scene_collection)
+          9    8 000012DF obs_frontend_add_tools_menu_item = @ILT+730(obs_frontend_add_tools_menu_item)
+         10    9 00001172 obs_frontend_add_tools_menu_qaction = @ILT+365(obs_frontend_add_tools_menu_qaction)
+         11    A 00001046 obs_frontend_add_undo_redo_action = @ILT+65(obs_frontend_add_undo_redo_action)
+         12    B 000010A5 obs_frontend_create_profile = @ILT+160(obs_frontend_create_profile)
+         13    C 000011EA obs_frontend_defer_save_begin = @ILT+485(obs_frontend_defer_save_begin)
+         14    D 00001352 obs_frontend_defer_save_end = @ILT+845(obs_frontend_defer_save_end)
+         15    E 00001037 obs_frontend_delete_profile = @ILT+50(obs_frontend_delete_profile)
+         16    F 00001140 obs_frontend_duplicate_profile = @ILT+315(obs_frontend_duplicate_profile)
+         17   10 00001019 obs_frontend_get_app_config = @ILT+20(obs_frontend_get_app_config)
+         18   11 0000111D obs_frontend_get_canvases = @ILT+280(obs_frontend_get_canvases)
+         19   12 000011C7 obs_frontend_get_current_preview_scene = @ILT+450(obs_frontend_get_current_preview_scene)
+         20   13 00001109 obs_frontend_get_current_profile = @ILT+260(obs_frontend_get_current_profile)
+         21   14 00001190 obs_frontend_get_current_profile_path = @ILT+395(obs_frontend_get_current_profile_path)
+         22   15 00001271 obs_frontend_get_current_record_output_path = @ILT+620(obs_frontend_get_current_record_output_path)
+         23   16 000010E1 obs_frontend_get_current_scene = @ILT+220(obs_frontend_get_current_scene)
+         24   17 0000137F obs_frontend_get_current_scene_collection = @ILT+890(obs_frontend_get_current_scene_collection)
+         25   18 000010D7 obs_frontend_get_current_transition = @ILT+210(obs_frontend_get_current_transition)
+         26   19 000013CF obs_frontend_get_global_config = @ILT+970(obs_frontend_get_global_config)
+         27   1A 00001005 obs_frontend_get_last_recording = @ILT+0(obs_frontend_get_last_recording)
+         28   1B 0000121C obs_frontend_get_last_replay = @ILT+535(obs_frontend_get_last_replay)
+         29   1C 0000112C obs_frontend_get_last_screenshot = @ILT+295(obs_frontend_get_last_screenshot)
+         30   1D 000010E6 obs_frontend_get_locale_string = @ILT+225(obs_frontend_get_locale_string)
+         31   1E 00001398 obs_frontend_get_main_window = @ILT+915(obs_frontend_get_main_window)
+         32   1F 00001226 obs_frontend_get_main_window_handle = @ILT+545(obs_frontend_get_main_window_handle)
+         33   20 00001357 obs_frontend_get_profile_config = @ILT+850(obs_frontend_get_profile_config)
+         34   21 000011BD obs_frontend_get_profiles = @ILT+440(obs_frontend_get_profiles)
+         35   22 000012DA obs_frontend_get_recording_output = @ILT+725(obs_frontend_get_recording_output)
+         36   23 00001122 obs_frontend_get_replay_buffer_output = @ILT+285(obs_frontend_get_replay_buffer_output)
+         37   24 00001370 obs_frontend_get_scene_collections = @ILT+875(obs_frontend_get_scene_collections)
+         38   25 00001235 obs_frontend_get_scene_names = @ILT+560(obs_frontend_get_scene_names)
+         39   26 0000135C obs_frontend_get_scenes = @ILT+855(obs_frontend_get_scenes)
+         40   27 00001127 obs_frontend_get_streaming_output = @ILT+290(obs_frontend_get_streaming_output)
+         41   28 000013A2 obs_frontend_get_streaming_service = @ILT+925(obs_frontend_get_streaming_service)
+         42   29 00001212 obs_frontend_get_system_tray = @ILT+525(obs_frontend_get_system_tray)
+         43   2A 000012E9 obs_frontend_get_tbar_position = @ILT+740(obs_frontend_get_tbar_position)
+         44   2B 000011B3 obs_frontend_get_transition_duration = @ILT+430(obs_frontend_get_transition_duration)
+         45   2C 000012CB obs_frontend_get_transitions = @ILT+710(obs_frontend_get_transitions)
+         46   2D 0000134D obs_frontend_get_user_config = @ILT+840(obs_frontend_get_user_config)
+         47   2E 0000108C obs_frontend_get_virtualcam_output = @ILT+135(obs_frontend_get_virtualcam_output)
+         48   2F 00001294 obs_frontend_is_theme_dark = @ILT+655(obs_frontend_is_theme_dark)
+         49   30 00001244 obs_frontend_open_projector = @ILT+575(obs_frontend_open_projector)
+         50   31 0000105F obs_frontend_open_sceneitem_edit_transform = @ILT+90(obs_frontend_open_sceneitem_edit_transform)
+         51   32 000010DC obs_frontend_open_source_filters = @ILT+215(obs_frontend_open_source_filters)
+         52   33 000011D1 obs_frontend_open_source_interaction = @ILT+460(obs_frontend_open_source_interaction)
+         53   34 00001217 obs_frontend_open_source_properties = @ILT+530(obs_frontend_open_source_properties)
+         54   35 00001087 obs_frontend_pop_ui_translation = @ILT+130(obs_frontend_pop_ui_translation)
+         55   36 000013BB obs_frontend_preview_enabled = @ILT+950(obs_frontend_preview_enabled)
+         56   37 00001389 obs_frontend_preview_program_mode_active = @ILT+900(obs_frontend_preview_program_mode_active)
+         57   38 00001325 obs_frontend_preview_program_trigger_transition = @ILT+800(obs_frontend_preview_program_trigger_transition)
+         58   39 00001131 obs_frontend_push_ui_translation = @ILT+300(obs_frontend_push_ui_translation)
+         59   3A 00001181 obs_frontend_recording_active = @ILT+380(obs_frontend_recording_active)
+         60   3B 00001253 obs_frontend_recording_add_chapter = @ILT+590(obs_frontend_recording_add_chapter)
+         61   3C 000013AC obs_frontend_recording_pause = @ILT+935(obs_frontend_recording_pause)
+         62   3D 000011F9 obs_frontend_recording_paused = @ILT+500(obs_frontend_recording_paused)
+         63   3E 0000136B obs_frontend_recording_split_file = @ILT+870(obs_frontend_recording_split_file)
+         64   3F 000013E3 obs_frontend_recording_start = @ILT+990(obs_frontend_recording_start)
+         65   40 000011CC obs_frontend_recording_stop = @ILT+455(obs_frontend_recording_stop)
+         66   41 0000116D obs_frontend_release_tbar = @ILT+360(obs_frontend_release_tbar)
+         67   42 0000138E obs_frontend_remove_canvas = @ILT+905(obs_frontend_remove_canvas)
+         68   43 00001118 obs_frontend_remove_dock = @ILT+275(obs_frontend_remove_dock)
+         69   44 00001320 obs_frontend_remove_event_callback = @ILT+795(obs_frontend_remove_event_callback)
+         70   45 000011A4 obs_frontend_remove_preload_callback = @ILT+415(obs_frontend_remove_preload_callback)
+         71   46 00001168 obs_frontend_remove_save_callback = @ILT+355(obs_frontend_remove_save_callback)
+         72   47 00001073 obs_frontend_replay_buffer_active = @ILT+110(obs_frontend_replay_buffer_active)
+         73   48 000013F2 obs_frontend_replay_buffer_save = @ILT+1005(obs_frontend_replay_buffer_save)
+         74   49 0000106E obs_frontend_replay_buffer_start = @ILT+105(obs_frontend_replay_buffer_start)
+         75   4A 0000101E obs_frontend_replay_buffer_stop = @ILT+25(obs_frontend_replay_buffer_stop)
+         76   4B 00001069 obs_frontend_reset_video = @ILT+100(obs_frontend_reset_video)
+         77   4C 000010A0 obs_frontend_save = @ILT+155(obs_frontend_save)
+         78   4D 000012C6 obs_frontend_save_streaming_service = @ILT+705(obs_frontend_save_streaming_service)
+         79   4E 0000118B obs_frontend_set_current_preview_scene = @ILT+390(obs_frontend_set_current_preview_scene)
+         80   4F 00001186 obs_frontend_set_current_profile = @ILT+385(obs_frontend_set_current_profile)
+         81   50 000013B6 obs_frontend_set_current_scene = @ILT+945(obs_frontend_set_current_scene)
+         82   51 00001343 obs_frontend_set_current_scene_collection = @ILT+830(obs_frontend_set_current_scene_collection)
+         83   52 000011D6 obs_frontend_set_current_transition = @ILT+465(obs_frontend_set_current_transition)
+         84   53 0000126C obs_frontend_set_preview_enabled = @ILT+615(obs_frontend_set_preview_enabled)
+         85   54 000012F8 obs_frontend_set_preview_program_mode = @ILT+755(obs_frontend_set_preview_program_mode)
+         86   55 00001267 obs_frontend_set_streaming_service = @ILT+610(obs_frontend_set_streaming_service)
+         87   56 0000139D obs_frontend_set_tbar_position = @ILT+920(obs_frontend_set_tbar_position)
+         88   57 0000137A obs_frontend_set_transition_duration = @ILT+885(obs_frontend_set_transition_duration)
+         89   58 0000133E obs_frontend_start_virtualcam = @ILT+825(obs_frontend_start_virtualcam)
+         90   59 00001384 obs_frontend_stop_virtualcam = @ILT+895(obs_frontend_stop_virtualcam)
+         91   5A 00001393 obs_frontend_streaming_active = @ILT+910(obs_frontend_streaming_active)
+         92   5B 000011F4 obs_frontend_streaming_start = @ILT+495(obs_frontend_streaming_start)
+         93   5C 00001032 obs_frontend_streaming_stop = @ILT+45(obs_frontend_streaming_stop)
+         94   5D 000013FC obs_frontend_take_screenshot = @ILT+1015(obs_frontend_take_screenshot)
+         95   5E 00001258 obs_frontend_take_source_screenshot = @ILT+595(obs_frontend_take_source_screenshot)
+         96   5F 0000102D obs_frontend_virtualcam_active = @ILT+40(obs_frontend_virtualcam_active)
+
+  Summary
+
+        1000 .00cfg
+        1000 .data
+        1000 .idata
+        1000 .pdata
+        5000 .rdata
+        1000 .reloc
+        1000 .rsrc
+        A000 .text
