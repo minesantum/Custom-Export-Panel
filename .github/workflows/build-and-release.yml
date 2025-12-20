@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build-windows:
     runs-on: windows-latest
@@ -26,7 +29,7 @@ jobs:
       run: |
         # Descargar OBS Studio completo (contiene headers)
         Write-Host "Downloading OBS Studio..."
-        $obsVersion = "30.2.2"
+        $obsVersion = "32.0.4"
         Invoke-WebRequest -Uri "https://github.com/obsproject/obs-studio/archive/refs/tags/$obsVersion.zip" -OutFile "obs-source.zip"
         Expand-Archive -Path "obs-source.zip" -DestinationPath "." -Force
         Rename-Item "obs-studio-$obsVersion" "obs-studio"
