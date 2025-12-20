@@ -3,8 +3,8 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*'  # Se activa cuando se hace push de un tag que empiece con 'v'
-  workflow_dispatch:  # Permite ejecutar manualmente desde GitHub
+      - 'v*'
+  workflow_dispatch:
 
 jobs:
   build-windows:
@@ -14,69 +14,71 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
       
+    - name: Setup MSVC
+      uses: ilammy/msvc-dev-cmd@v1
+      
     - name: Setup CMake
       uses: lukka/get-cmake@latest
       
-    - name: Download OBS Studio
+    - name: Download OBS Studio Source
       run: |
+        Write-Host "Downloading OBS Studio source code..."
         $obsVersion = "32.0.4"
-        $obsHash = "407944a27"
-        $obsArtifact = "obs-studio-windows-x64-${obsHash}"
-        $obsFolder = "obs-studio-${obsVersion}-${obsHash}-windows-x64"
+        $url = "https://github.com/obsproject/obs-studio/archive/refs/tags/${obsVersion}.zip"
         
-        Write-Host "Downloading OBS Studio ${obsVersion}..."
-        $url = "https://github.com/obsproject/obs-studio/releases/download/${obsVersion}/OBS-Studio-${obsVersion}-Windows.zip"
+        Invoke-WebRequest -Uri $url -OutFile "obs-source.zip"
+        Expand-Archive -Path "obs-source.zip" -DestinationPath "." -Force
         
-        # Crear directorio temporal
-        New-Item -ItemType Directory -Force -Path "$env:TEMP\obs-download"
-        
-        # Descargar OBS
-        Invoke-WebRequest -Uri $url -OutFile "$env:TEMP\obs-download\obs.zip"
-        
-        # Extraer
-        Expand-Archive -Path "$env:TEMP\obs-download\obs.zip" -DestinationPath "$env:TEMP\${obsArtifact}" -Force
-        
-        # Establecer variable de entorno
-        echo "OBS_DIR=$env:TEMP\${obsArtifact}\${obsFolder}" >> $env:GITHUB_ENV
+        $obsSourceDir = "obs-studio-${obsVersion}"
+        echo "OBS_SOURCE_DIR=$PWD\$obsSourceDir" >> $env:GITHUB_ENV
       shell: pwsh
       
-    - name: Download Qt6 Dependencies
+    - name: Download OBS Dependencies
       run: |
+        Write-Host "Downloading OBS dependencies..."
         $depsVersion = "2025-08-23"
-        $depsName = "windows-deps-qt6-${depsVersion}-x64"
         
-        Write-Host "Downloading Qt6 Dependencies..."
-        $url = "https://github.com/obsproject/obs-deps/releases/download/${depsVersion}/windows-deps-qt6-${depsVersion}-x64.zip"
+        $qtUrl = "https://github.com/obsproject/obs-deps/releases/download/${depsVersion}/windows-deps-qt6-${depsVersion}-x64.zip"
+        Invoke-WebRequest -Uri $qtUrl -OutFile "qt-deps.zip"
+        New-Item -ItemType Directory -Force -Path "deps/qt6"
+        Expand-Archive -Path "qt-deps.zip" -DestinationPath "deps/qt6" -Force
         
-        # Crear directorio temporal
-        New-Item -ItemType Directory -Force -Path "$env:TEMP\qt-download"
+        $obsUrl = "https://github.com/obsproject/obs-deps/releases/download/${depsVersion}/windows-deps-${depsVersion}-x64.zip"
+        Invoke-WebRequest -Uri $obsUrl -OutFile "obs-deps.zip"
+        New-Item -ItemType Directory -Force -Path "deps/obs"
+        Expand-Archive -Path "obs-deps.zip" -DestinationPath "deps/obs" -Force
         
-        # Descargar Qt deps
-        Invoke-WebRequest -Uri $url -OutFile "$env:TEMP\qt-download\qt-deps.zip"
-        
-        # Extraer
-        Expand-Archive -Path "$env:TEMP\qt-download\qt-deps.zip" -DestinationPath "$env:TEMP\${depsName}" -Force
-        
-        # Establecer variable de entorno
-        echo "QT_DEPS_DIR=$env:TEMP\${depsName}" >> $env:GITHUB_ENV
+        echo "QT_DEPS_DIR=$PWD\deps\qt6" >> $env:GITHUB_ENV
+        echo "OBS_DEPS_DIR=$PWD\deps\obs" >> $env:GITHUB_ENV
       shell: pwsh
       
-    - name: Configure CMake
+    - name: Build OBS Libraries
+      run: |
+        Write-Host "Building OBS libraries..."
+        
+        cd $env:OBS_SOURCE_DIR
+        
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH="$env:QT_DEPS_DIR;$env:OBS_DEPS_DIR" -DENABLE_BROWSER=OFF -DENABLE_WEBSOCKET=OFF -DENABLE_UI=OFF -DBUILD_FOR_DISTRIBUTION=OFF
+        
+        cmake --build build --config Release --target obs-frontend-api
+        cmake --build build --config Release --target libobs
+        
+        New-Item -ItemType Directory -Force -Path "$PWD\..\libs"
+        Copy-Item "build\libobs\Release\obs.lib" -Destination "$PWD\..\libs\" -Force
+        Copy-Item "build\UI\obs-frontend-api\Release\obs-frontend-api.lib" -Destination "$PWD\..\libs\" -Force
+        
+        cd ..
+      shell: pwsh
+      
+    - name: Configure Plugin
       run: |
         $qt6Dir = "$env:QT_DEPS_DIR\lib\cmake\Qt6"
-        $libobsDir = "$env:OBS_DIR\cmake\libobs"
         
-        if (-not (Test-Path $libobsDir)) {
-          $libobsDir = "$env:OBS_DIR\lib\cmake\libobs"
-        }
-        
+        Write-Host "Configuring plugin..."
         Write-Host "Qt6_DIR: $qt6Dir"
-        Write-Host "libobs_DIR: $libobsDir"
+        Write-Host "OBS_SOURCE_DIR: $env:OBS_SOURCE_DIR"
         
-        cmake -S . -B build `
-          -DQt6_DIR="$qt6Dir" `
-          -Dlibobs_DIR="$libobsDir" `
-          -DCMAKE_PREFIX_PATH="$env:QT_DEPS_DIR;$env:OBS_DIR"
+        cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DQt6_DIR="$qt6Dir" -DOBS_SOURCE_DIR="$env:OBS_SOURCE_DIR" -DCMAKE_PREFIX_PATH="$env:QT_DEPS_DIR;$env:OBS_DEPS_DIR"
       shell: pwsh
       
     - name: Build Plugin
@@ -84,43 +86,17 @@ jobs:
       
     - name: Prepare Release Files
       run: |
-        # Crear directorio para la release
         New-Item -ItemType Directory -Force -Path "release"
-        
-        # Copiar el DLL compilado
         Copy-Item "build\Release\custom-export-panel.dll" -Destination "release\"
         
-        # Copiar archivo de ejemplo de configuración si existe
         if (Test-Path "export_config.ini.example") {
           Copy-Item "export_config.ini.example" -Destination "release\"
         }
         
-        # Crear un README para la release
-        @"
-# Custom Export Panel for OBS Studio
-
-## Instalación
-
-1. Copia \`custom-export-panel.dll\` a tu carpeta de plugins de OBS:
-   - Normalmente: \`C:\Program Files\obs-studio\obs-plugins\64bit\`
-   
-2. (Opcional) Copia \`export_config.ini.example\` a:
-   - \`%APPDATA%\obs-studio\plugin_config\custom-export-panel\export_config.ini\`
-   - Edita el archivo según tus necesidades
-
-3. Reinicia OBS Studio
-
-## Creador
-
-Plugin creado por DonKolia
-
-## Versión
-
-${{ github.ref_name }}
-"@ | Out-File -FilePath "release\README.md" -Encoding UTF8
+        Set-Content -Path "release\README.md" -Value "# Custom Export Panel for OBS Studio`n`n## Instalacion`n`n1. Copia custom-export-panel.dll a: C:\Program Files\obs-studio\obs-plugins\64bit\`n2. Reinicia OBS Studio`n`n## Creador`n`nPlugin creado por DonKolia"
       shell: pwsh
       
-    - name: Create ZIP for Release
+    - name: Create ZIP
       run: |
         Compress-Archive -Path "release\*" -DestinationPath "custom-export-panel-${{ github.ref_name }}.zip"
       shell: pwsh
@@ -134,12 +110,12 @@ ${{ github.ref_name }}
         body: |
           ## Custom Export Panel v${{ github.ref_name }}
           
-          Plugin de exportación personalizada para OBS Studio.
+          Plugin de exportacion personalizada para OBS Studio.
           
-          ### Instalación
+          ### Instalacion
           
-          1. Descarga `custom-export-panel.dll`
-          2. Copia el archivo a `C:\Program Files\obs-studio\obs-plugins\64bit\`
+          1. Descarga custom-export-panel.dll
+          2. Copia el archivo a C:\Program Files\obs-studio\obs-plugins\64bit\
           3. Reinicia OBS Studio
           
           ### Creador
@@ -148,8 +124,8 @@ ${{ github.ref_name }}
           
           ### Archivos
           
-          - `custom-export-panel.dll` - Plugin compilado
-          - `custom-export-panel-${{ github.ref_name }}.zip` - Paquete completo con README
+          - custom-export-panel.dll - Plugin compilado
+          - custom-export-panel-${{ github.ref_name }}.zip - Paquete completo con README
         draft: false
         prerelease: false
       env:
