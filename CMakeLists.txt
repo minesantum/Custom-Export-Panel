@@ -40,8 +40,8 @@ if(DEFINED OBS_SOURCE_DIR)
     target_include_directories(libobs INTERFACE 
         "${CMAKE_SOURCE_DIR}/include"
         "${OBS_SOURCE_DIR}/libobs"
-        "${OBS_SOURCE_DIR}/frontend"
-        "${OBS_SOURCE_DIR}/frontend/api"
+        "${OBS_SOURCE_DIR}/UI"
+        "${OBS_SOURCE_DIR}/UI/obs-frontend-api"
         "${OBS_SOURCE_DIR}/deps/w32-pthreads"
     )
 endif()
@@ -66,8 +66,8 @@ if(DEFINED OBS_SOURCE_DIR)
     target_include_directories(custom-export-panel PRIVATE 
         "${CMAKE_SOURCE_DIR}/include"
         "${OBS_SOURCE_DIR}/libobs"
-        "${OBS_SOURCE_DIR}/frontend"
-        "${OBS_SOURCE_DIR}/frontend/api"
+        "${OBS_SOURCE_DIR}/UI"
+        "${OBS_SOURCE_DIR}/UI/obs-frontend-api"
     )
 endif()
 
