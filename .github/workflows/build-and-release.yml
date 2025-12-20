@@ -39,7 +39,7 @@ jobs:
         git submodule update --init --recursive
         
         # Descargar dependencias precompiladas
-        $depsVersion = "2024-08-20"
+        $depsVersion = "2024-08-08"
         Invoke-WebRequest -Uri "https://github.com/obsproject/obs-deps/releases/download/$depsVersion/windows-deps-$depsVersion-x64.zip" -OutFile "windows-deps.zip"
         Invoke-WebRequest -Uri "https://github.com/obsproject/obs-deps/releases/download/$depsVersion/windows-deps-qt6-$depsVersion-x64.zip" -OutFile "windows-deps-qt6.zip"
         
