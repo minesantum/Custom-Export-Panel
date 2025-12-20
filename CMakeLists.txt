@@ -37,11 +37,22 @@ endif()
 
 # Include Directories
 if(DEFINED OBS_SOURCE_DIR)
+    # Detectar automáticamente si es 'UI' o 'frontend'
+    if(EXISTS "${OBS_SOURCE_DIR}/UI")
+        set(OBS_FRONTEND_DIR "${OBS_SOURCE_DIR}/UI")
+        message(STATUS "Found OBS frontend dir: UI")
+    elseif(EXISTS "${OBS_SOURCE_DIR}/frontend")
+        set(OBS_FRONTEND_DIR "${OBS_SOURCE_DIR}/frontend")
+        message(STATUS "Found OBS frontend dir: frontend")
+    else()
+        message(WARNING "Could not find OBS frontend directory (UI or frontend)")
+    endif()
+
     target_include_directories(libobs INTERFACE 
         "${CMAKE_SOURCE_DIR}/include"
         "${OBS_SOURCE_DIR}/libobs"
-        "${OBS_SOURCE_DIR}/UI"
-        "${OBS_SOURCE_DIR}/UI/obs-frontend-api"
+        "${OBS_FRONTEND_DIR}"
+        "${OBS_FRONTEND_DIR}/obs-frontend-api"
         "${OBS_SOURCE_DIR}/deps/w32-pthreads"
     )
 endif()
@@ -66,8 +77,8 @@ if(DEFINED OBS_SOURCE_DIR)
     target_include_directories(custom-export-panel PRIVATE 
         "${CMAKE_SOURCE_DIR}/include"
         "${OBS_SOURCE_DIR}/libobs"
-        "${OBS_SOURCE_DIR}/UI"
-        "${OBS_SOURCE_DIR}/UI/obs-frontend-api"
+        "${OBS_FRONTEND_DIR}"
+        "${OBS_FRONTEND_DIR}/obs-frontend-api"
     )
 endif()
 
