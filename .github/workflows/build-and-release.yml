@@ -19,73 +19,71 @@ jobs:
       with:
         arch: x64
       
-    - name: Setup CMake and Ninja
+    - name: Setup CMake
       uses: lukka/get-cmake@latest
       
-    - name: Cache OBS Studio
-      id: cache-obs
-      uses: actions/cache@v3
-      with:
-        path: obs-studio
-        key: obs-studio-30.2.2-windows
-        
-    - name: Download and Build OBS Studio
-      if: steps.cache-obs.outputs.cache-hit != 'true'
+    - name: Download OBS Studio Headers and Libraries
       run: |
-        # Descargar código fuente de OBS
-        git clone --recursive https://github.com/obsproject/obs-studio.git
-        cd obs-studio
-        git checkout 30.2.2
-        git submodule update --init --recursive
+        # Descargar OBS Studio completo (contiene headers)
+        Write-Host "Downloading OBS Studio..."
+        $obsVersion = "30.2.2"
+        Invoke-WebRequest -Uri "https://github.com/obsproject/obs-studio/archive/refs/tags/$obsVersion.zip" -OutFile "obs-source.zip"
+        Expand-Archive -Path "obs-source.zip" -DestinationPath "." -Force
+        Rename-Item "obs-studio-$obsVersion" "obs-studio"
         
-        # Descargar dependencias precompiladas
+        # Descargar dependencias Qt6
+        Write-Host "Downloading Qt6 dependencies..."
         $depsVersion = "2024-08-08"
-        Invoke-WebRequest -Uri "https://github.com/obsproject/obs-deps/releases/download/$depsVersion/windows-deps-$depsVersion-x64.zip" -OutFile "windows-deps.zip"
-        Invoke-WebRequest -Uri "https://github.com/obsproject/obs-deps/releases/download/$depsVersion/windows-deps-qt6-$depsVersion-x64.zip" -OutFile "windows-deps-qt6.zip"
+        Invoke-WebRequest -Uri "https://github.com/obsproject/obs-deps/releases/download/$depsVersion/windows-deps-qt6-$depsVersion-x64.zip" -OutFile "qt-deps.zip"
+        New-Item -ItemType Directory -Force -Path "deps"
+        Expand-Archive -Path "qt-deps.zip" -DestinationPath "deps" -Force
         
-        Expand-Archive -Path "windows-deps.zip" -DestinationPath "./deps" -Force
-        Expand-Archive -Path "windows-deps-qt6.zip" -DestinationPath "./deps" -Force
+        # Crear directorio libs si no existe
+        New-Item -ItemType Directory -Force -Path "libs"
         
-        # Configurar y compilar solo las bibliotecas necesarias
-        cmake -S . -B build -G Ninja `
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo `
-          -DCMAKE_PREFIX_PATH="$PWD/deps" `
-          -DENABLE_BROWSER=OFF `
-          -DENABLE_WEBSOCKET=OFF `
-          -DENABLE_AJA=OFF `
-          -DENABLE_PLUGINS=OFF `
-          -DBUILD_TESTS=OFF
+        # Verificar que los archivos .lib existen en el repositorio
+        if (Test-Path "libs/obs.lib") {
+          Write-Host "Found obs.lib in repository"
+        } else {
+          Write-Error "obs.lib not found in libs directory"
+          exit 1
+        }
         
-        cmake --build build --config RelWithDebInfo --target obs-frontend-api
-        cmake --build build --config RelWithDebInfo --target libobs
-        
-        cd ..
+        if (Test-Path "libs/obs-frontend-api.lib") {
+          Write-Host "Found obs-frontend-api.lib in repository"
+        } else {
+          Write-Error "obs-frontend-api.lib not found in libs directory"
+          exit 1
+        }
       shell: pwsh
       
     - name: Configure Plugin
       run: |
-        $obsDir = "$PWD/obs-studio"
-        $qt6Dir = "$obsDir/deps/lib/cmake/Qt6"
+        $obsSourceDir = "$PWD/obs-studio"
+        $qt6Dir = "$PWD/deps/lib/cmake/Qt6"
         
-        cmake -S . -B build -G Ninja `
-          -DCMAKE_BUILD_TYPE=RelWithDebInfo `
+        Write-Host "OBS Source: $obsSourceDir"
+        Write-Host "Qt6 Dir: $qt6Dir"
+        
+        cmake -S . -B build `
+          -G "Visual Studio 17 2022" -A x64 `
+          -DCMAKE_BUILD_TYPE=Release `
           -DQt6_DIR="$qt6Dir" `
-          -DOBS_SOURCE_DIR="$obsDir" `
-          -DCMAKE_PREFIX_PATH="$obsDir/deps"
+          -DOBS_SOURCE_DIR="$obsSourceDir" `
+          -DCMAKE_PREFIX_PATH="$PWD/deps"
       shell: pwsh
       
     - name: Build Plugin
-      run: cmake --build build --config RelWithDebInfo
+      run: cmake --build build --config Release
       
     - name: Prepare Release Files
       run: |
         New-Item -ItemType Directory -Force -Path "release"
         
-        # Buscar el DLL en diferentes ubicaciones posibles
+        # Buscar el DLL
         $dllPaths = @(
-          "build/custom-export-panel.dll",
-          "build/RelWithDebInfo/custom-export-panel.dll",
-          "build/Release/custom-export-panel.dll"
+          "build/Release/custom-export-panel.dll",
+          "build/custom-export-panel.dll"
         )
         
         $found = $false
@@ -100,9 +98,11 @@ jobs:
         
         if (-not $found) {
           Write-Error "Could not find compiled DLL"
+          Get-ChildItem -Path "build" -Recurse -Filter "*.dll" | ForEach-Object { Write-Host $_.FullName }
           exit 1
         }
         
+        # Copiar archivo de configuración de ejemplo
         if (Test-Path "export_config.ini.example") {
           Copy-Item "export_config.ini.example" -Destination "release/"
         }
@@ -147,7 +147,7 @@ jobs:
           ### Archivos
           
           - `custom-export-panel.dll` - Plugin compilado
-          - `custom-export-panel-${{ github.ref_name }}.zip` - Paquete completo
+          - `custom-export-panel-${{ github.ref_name }}.zip` - Paquete completo con README
         draft: false
         prerelease: false
       env:
