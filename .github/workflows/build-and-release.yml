@@ -57,6 +57,14 @@ jobs:
         }
       shell: pwsh
       
+    - name: Clean Build Directory
+      run: |
+        if (Test-Path "build") {
+          Remove-Item -Path "build" -Recurse -Force
+          Write-Host "Cleaned build directory"
+        }
+      shell: pwsh
+      
     - name: Configure Plugin
       run: |
         $obsSourceDir = "$PWD/obs-studio"
