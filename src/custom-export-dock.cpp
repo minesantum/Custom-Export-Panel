@@ -45,6 +45,10 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     layout->addStretch();
     content->setLayout(layout);
     setWidget(content);
+    
+    // Conectar señales para detectar cambios
+    connect(pathEdit, &QLineEdit::textChanged, this, &CustomExportDock::onTextChanged);
+    connect(filenameEdit, &QLineEdit::textChanged, this, &CustomExportDock::onTextChanged);
 }
 
 CustomExportDock::~CustomExportDock() {}
@@ -62,4 +66,9 @@ void CustomExportDock::handleBrowse() {
     if (!dir.isEmpty()) {
         pathEdit->setText(dir);
     }
+}
+
+void CustomExportDock::onTextChanged() {
+    // Emitir señal cuando cambie cualquier texto
+    emit configChanged();
 }

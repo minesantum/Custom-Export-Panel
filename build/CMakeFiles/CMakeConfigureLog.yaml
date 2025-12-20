@@ -120,7 +120,7 @@ events:
       The output was:
       0
       Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-      Compilaci├│n iniciada a las 20/12/2025 11:16:47.
+      Compilaci├│n iniciada a las 20/12/2025 11:32:05.
       
       Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\4.2.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" en nodo 1 (destinos predeterminados).
       PrepareForBuild:
@@ -149,7 +149,7 @@ events:
           0 Advertencia(s)
           0 Errores
       
-      Tiempo transcurrido 00:00:00.64
+      Tiempo transcurrido 00:00:00.63
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -1251,8 +1251,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-5fd0zz"
-      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-5fd0zz"
+      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-0dkajq"
+      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-0dkajq"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1262,39 +1262,39 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-5fd0zz'
+        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-0dkajq'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d23d8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_4c5a4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-        Compilaci├│n iniciada a las 20/12/2025 11:16:48.
+        Compilaci├│n iniciada a las 20/12/2025 11:32:06.
         
-        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fd0zz\\cmTC_d23d8.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0dkajq\\cmTC_4c5a4.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fd0zz\\Debug\\".
-          Creando directorio "cmTC_d23d8.dir\\Debug\\cmTC_d23d8.tlog\\".
+          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0dkajq\\Debug\\".
+          Creando directorio "cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_d23d8.dir\\Debug\\cmTC_d23d8.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_d23d8.dir\\Debug\\cmTC_d23d8.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d23d8.dir\\Debug\\\\" /Fd"cmTC_d23d8.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_4c5a4.dir\\Debug\\\\" /Fd"cmTC_4c5a4.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35222 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_d23d8.dir\\Debug\\\\" /Fd"cmTC_d23d8.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /Fo"cmTC_4c5a4.dir\\Debug\\\\" /Fd"cmTC_4c5a4.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-4.2\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fd0zz\\Debug\\cmTC_d23d8.exe" /INCREMENTAL /ILK:"cmTC_d23d8.dir\\Debug\\cmTC_d23d8.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-5fd0zz/Debug/cmTC_d23d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-5fd0zz/Debug/cmTC_d23d8.lib" /MACHINE:X64  /machine:x64 cmTC_d23d8.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_d23d8.vcxproj -> C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fd0zz\\Debug\\cmTC_d23d8.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0dkajq\\Debug\\cmTC_4c5a4.exe" /INCREMENTAL /ILK:"cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-0dkajq/Debug/cmTC_4c5a4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-0dkajq/Debug/cmTC_4c5a4.lib" /MACHINE:X64  /machine:x64 cmTC_4c5a4.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_4c5a4.vcxproj -> C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0dkajq\\Debug\\cmTC_4c5a4.exe
         FinalizeBuildStatus:
-          Se eliminar├í el archivo "cmTC_d23d8.dir\\Debug\\cmTC_d23d8.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_d23d8.dir\\Debug\\cmTC_d23d8.tlog\\cmTC_d23d8.lastbuildstate".
-        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5fd0zz\\cmTC_d23d8.vcxproj" (destinos predeterminados).
+          Se eliminar├í el archivo "cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_4c5a4.dir\\Debug\\cmTC_4c5a4.tlog\\cmTC_4c5a4.lastbuildstate".
+        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-0dkajq\\cmTC_4c5a4.vcxproj" (destinos predeterminados).
         
         Compilaci├│n correcta.
             0 Advertencia(s)
             0 Errores
         
-        Tiempo transcurrido 00:00:00.60
+        Tiempo transcurrido 00:00:00.61
         
       exitCode: 0
   -
@@ -1341,8 +1341,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-36vfuf"
-      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-36vfuf"
+      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-3oe4xh"
+      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-3oe4xh"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1352,39 +1352,39 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-36vfuf'
+        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-3oe4xh'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a4fd8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1bc9a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-        Compilaci├│n iniciada a las 20/12/2025 11:16:49.
+        Compilaci├│n iniciada a las 20/12/2025 11:32:07.
         
-        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\cmTC_a4fd8.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\cmTC_1bc9a.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\Debug\\".
-          Creando directorio "cmTC_a4fd8.dir\\Debug\\cmTC_a4fd8.tlog\\".
+          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\Debug\\".
+          Creando directorio "cmTC_1bc9a.dir\\Debug\\cmTC_1bc9a.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_a4fd8.dir\\Debug\\cmTC_a4fd8.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_a4fd8.dir\\Debug\\cmTC_a4fd8.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_1bc9a.dir\\Debug\\cmTC_1bc9a.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_1bc9a.dir\\Debug\\cmTC_1bc9a.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_a4fd8.dir\\Debug\\\\" /Fd"cmTC_a4fd8.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_1bc9a.dir\\Debug\\\\" /Fd"cmTC_1bc9a.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\src.cxx"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35222 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_a4fd8.dir\\Debug\\\\" /Fd"cmTC_a4fd8.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_1bc9a.dir\\Debug\\\\" /Fd"cmTC_1bc9a.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\src.cxx"
           src.cxx
-        C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\src.cxx(1,10): error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\cmTC_a4fd8.vcxproj]
-        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\cmTC_a4fd8.vcxproj" (destinos predeterminados) -- ERROR.
+        C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\src.cxx(1,10): error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\cmTC_1bc9a.vcxproj]
+        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\cmTC_1bc9a.vcxproj" (destinos predeterminados) -- ERROR.
         
         ERROR al compilar.
         
-        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\cmTC_a4fd8.vcxproj" (destino predeterminado) (1) ->
+        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\cmTC_1bc9a.vcxproj" (destino predeterminado) (1) ->
         (ClCompile destino) -> 
-          C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\src.cxx(1,10): error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-36vfuf\\cmTC_a4fd8.vcxproj]
+          C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\src.cxx(1,10): error C1083: No se puede abrir el archivo incluir: 'pthread.h': No such file or directory [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3oe4xh\\cmTC_1bc9a.vcxproj]
         
             0 Advertencia(s)
             1 Errores
         
-        Tiempo transcurrido 00:00:00.42
+        Tiempo transcurrido 00:00:00.41
         
       exitCode: 1
   -
@@ -1402,8 +1402,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-a247lq"
-      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-a247lq"
+      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-sm0nk6"
+      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-sm0nk6"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1413,41 +1413,41 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-a247lq'
+        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-sm0nk6'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fd692.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6bca5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-        Compilaci├│n iniciada a las 20/12/2025 11:16:49.
+        Compilaci├│n iniciada a las 20/12/2025 11:32:08.
         
-        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\cmTC_fd692.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\cmTC_6bca5.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\Debug\\".
-          Creando directorio "cmTC_fd692.dir\\Debug\\cmTC_fd692.tlog\\".
+          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\Debug\\".
+          Creando directorio "cmTC_6bca5.dir\\Debug\\cmTC_6bca5.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_fd692.dir\\Debug\\cmTC_fd692.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_fd692.dir\\Debug\\cmTC_fd692.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_6bca5.dir\\Debug\\cmTC_6bca5.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_6bca5.dir\\Debug\\cmTC_6bca5.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_fd692.dir\\Debug\\\\" /Fd"cmTC_fd692.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_6bca5.dir\\Debug\\\\" /Fd"cmTC_6bca5.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\CheckFunctionExists.cxx"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35222 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_fd692.dir\\Debug\\\\" /Fd"cmTC_fd692.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_6bca5.dir\\Debug\\\\" /Fd"cmTC_6bca5.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\Debug\\cmTC_fd692.exe" /INCREMENTAL /ILK:"cmTC_fd692.dir\\Debug\\cmTC_fd692.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-a247lq/Debug/cmTC_fd692.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-a247lq/Debug/cmTC_fd692.lib" /MACHINE:X64  /machine:x64 cmTC_fd692.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: no se puede abrir el archivo 'pthreads.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\cmTC_fd692.vcxproj]
-        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\cmTC_fd692.vcxproj" (destinos predeterminados) -- ERROR.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\Debug\\cmTC_6bca5.exe" /INCREMENTAL /ILK:"cmTC_6bca5.dir\\Debug\\cmTC_6bca5.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-sm0nk6/Debug/cmTC_6bca5.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-sm0nk6/Debug/cmTC_6bca5.lib" /MACHINE:X64  /machine:x64 cmTC_6bca5.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: no se puede abrir el archivo 'pthreads.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\cmTC_6bca5.vcxproj]
+        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\cmTC_6bca5.vcxproj" (destinos predeterminados) -- ERROR.
         
         ERROR al compilar.
         
-        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\cmTC_fd692.vcxproj" (destino predeterminado) (1) ->
+        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\cmTC_6bca5.vcxproj" (destino predeterminado) (1) ->
         (Link destino) -> 
-          LINK : fatal error LNK1104: no se puede abrir el archivo 'pthreads.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-a247lq\\cmTC_fd692.vcxproj]
+          LINK : fatal error LNK1104: no se puede abrir el archivo 'pthreads.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-sm0nk6\\cmTC_6bca5.vcxproj]
         
             0 Advertencia(s)
             1 Errores
         
-        Tiempo transcurrido 00:00:00.52
+        Tiempo transcurrido 00:00:00.51
         
       exitCode: 1
   -
@@ -1465,8 +1465,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-nc3ffd"
-      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-nc3ffd"
+      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-v8kgc0"
+      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-v8kgc0"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1476,41 +1476,41 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-nc3ffd'
+        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-v8kgc0'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_45ff2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_0277e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-        Compilaci├│n iniciada a las 20/12/2025 11:16:50.
+        Compilaci├│n iniciada a las 20/12/2025 11:32:09.
         
-        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\cmTC_45ff2.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\cmTC_0277e.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\Debug\\".
-          Creando directorio "cmTC_45ff2.dir\\Debug\\cmTC_45ff2.tlog\\".
+          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\Debug\\".
+          Creando directorio "cmTC_0277e.dir\\Debug\\cmTC_0277e.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_45ff2.dir\\Debug\\cmTC_45ff2.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_45ff2.dir\\Debug\\cmTC_45ff2.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_0277e.dir\\Debug\\cmTC_0277e.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_0277e.dir\\Debug\\cmTC_0277e.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_45ff2.dir\\Debug\\\\" /Fd"cmTC_45ff2.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\CheckFunctionExists.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_0277e.dir\\Debug\\\\" /Fd"cmTC_0277e.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\CheckFunctionExists.cxx"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35222 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_45ff2.dir\\Debug\\\\" /Fd"cmTC_45ff2.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\CheckFunctionExists.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_0277e.dir\\Debug\\\\" /Fd"cmTC_0277e.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\CheckFunctionExists.cxx"
           CheckFunctionExists.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\Debug\\cmTC_45ff2.exe" /INCREMENTAL /ILK:"cmTC_45ff2.dir\\Debug\\cmTC_45ff2.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-nc3ffd/Debug/cmTC_45ff2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-nc3ffd/Debug/cmTC_45ff2.lib" /MACHINE:X64  /machine:x64 cmTC_45ff2.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: no se puede abrir el archivo 'pthread.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\cmTC_45ff2.vcxproj]
-        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\cmTC_45ff2.vcxproj" (destinos predeterminados) -- ERROR.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\Debug\\cmTC_0277e.exe" /INCREMENTAL /ILK:"cmTC_0277e.dir\\Debug\\cmTC_0277e.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-v8kgc0/Debug/cmTC_0277e.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-v8kgc0/Debug/cmTC_0277e.lib" /MACHINE:X64  /machine:x64 cmTC_0277e.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: no se puede abrir el archivo 'pthread.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\cmTC_0277e.vcxproj]
+        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\cmTC_0277e.vcxproj" (destinos predeterminados) -- ERROR.
         
         ERROR al compilar.
         
-        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\cmTC_45ff2.vcxproj" (destino predeterminado) (1) ->
+        "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\cmTC_0277e.vcxproj" (destino predeterminado) (1) ->
         (Link destino) -> 
-          LINK : fatal error LNK1104: no se puede abrir el archivo 'pthread.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nc3ffd\\cmTC_45ff2.vcxproj]
+          LINK : fatal error LNK1104: no se puede abrir el archivo 'pthread.lib' [C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-v8kgc0\\cmTC_0277e.vcxproj]
         
             0 Advertencia(s)
             1 Errores
         
-        Tiempo transcurrido 00:00:00.50
+        Tiempo transcurrido 00:00:00.52
         
       exitCode: 1
   -
@@ -1936,8 +1936,8 @@ events:
     checks:
       - "Performing Test HAVE_STDATOMIC"
     directories:
-      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-pdwvhm"
-      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-pdwvhm"
+      source: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-8k4kc8"
+      binary: "C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-8k4kc8"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -1947,39 +1947,39 @@ events:
       variable: "HAVE_STDATOMIC"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-pdwvhm'
+        Change Dir: 'C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-8k4kc8'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_74b31.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_b1b89.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         Versi├│n de MSBuild 17.14.23+b0019275e para .NET Framework
-        Compilaci├│n iniciada a las 20/12/2025 11:16:51.
+        Compilaci├│n iniciada a las 20/12/2025 11:32:10.
         
-        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\cmTC_74b31.vcxproj" en nodo 1 (destinos predeterminados).
+        Proyecto "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\cmTC_b1b89.vcxproj" en nodo 1 (destinos predeterminados).
         PrepareForBuild:
           La salida estructurada est├í habilitada. El formato del diagn├│stico del compilador reflejar├í la jerarqu├¡a de errores. Consulte https://aka.ms/cpp/structured-output para obtener m├ís detalles.
-          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\Debug\\".
-          Creando directorio "cmTC_74b31.dir\\Debug\\cmTC_74b31.tlog\\".
+          Creando directorio "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\Debug\\".
+          Creando directorio "cmTC_b1b89.dir\\Debug\\cmTC_b1b89.tlog\\".
         InitializeBuildStatus:
-          Se crear├í "cmTC_74b31.dir\\Debug\\cmTC_74b31.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
-          Aplicando tarea Touch a "cmTC_74b31.dir\\Debug\\cmTC_74b31.tlog\\unsuccessfulbuild".
+          Se crear├í "cmTC_b1b89.dir\\Debug\\cmTC_b1b89.tlog\\unsuccessfulbuild" porque se especific├│ "AlwaysCreate".
+          Aplicando tarea Touch a "cmTC_b1b89.dir\\Debug\\cmTC_b1b89.tlog\\unsuccessfulbuild".
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_74b31.dir\\Debug\\\\" /Fd"cmTC_74b31.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\src.cxx"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_b1b89.dir\\Debug\\\\" /Fd"cmTC_b1b89.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\src.cxx"
           Compilador de optimizaci├│n de C/C++ de Microsoft (R) versi├│n 19.44.35222 para x64
           (C) Microsoft Corporation. Todos los derechos reservados.
-          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_74b31.dir\\Debug\\\\" /Fd"cmTC_74b31.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\src.cxx"
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_STDATOMIC /D _MBCS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GR /std:c++17 /Fo"cmTC_b1b89.dir\\Debug\\\\" /Fd"cmTC_b1b89.dir\\Debug\\vc143.pdb" /external:W1 /TP /errorReport:queue "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\src.cxx"
           src.cxx
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\Debug\\cmTC_74b31.exe" /INCREMENTAL /ILK:"cmTC_74b31.dir\\Debug\\cmTC_74b31.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-pdwvhm/Debug/cmTC_74b31.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-pdwvhm/Debug/cmTC_74b31.lib" /MACHINE:X64  /machine:x64 cmTC_74b31.dir\\Debug\\src.obj
-          cmTC_74b31.vcxproj -> C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\Debug\\cmTC_74b31.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\bin\\HostX64\\x64\\link.exe /OUT:"C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\Debug\\cmTC_b1b89.exe" /INCREMENTAL /ILK:"cmTC_b1b89.dir\\Debug\\cmTC_b1b89.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-8k4kc8/Debug/cmTC_b1b89.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /IMPLIB:"C:/Users/DonKolia/Downloads/Custom Export Panel/build/CMakeFiles/CMakeScratch/TryCompile-8k4kc8/Debug/cmTC_b1b89.lib" /MACHINE:X64  /machine:x64 cmTC_b1b89.dir\\Debug\\src.obj
+          cmTC_b1b89.vcxproj -> C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\Debug\\cmTC_b1b89.exe
         FinalizeBuildStatus:
-          Se eliminar├í el archivo "cmTC_74b31.dir\\Debug\\cmTC_74b31.tlog\\unsuccessfulbuild".
-          Aplicando tarea Touch a "cmTC_74b31.dir\\Debug\\cmTC_74b31.tlog\\cmTC_74b31.lastbuildstate".
-        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-pdwvhm\\cmTC_74b31.vcxproj" (destinos predeterminados).
+          Se eliminar├í el archivo "cmTC_b1b89.dir\\Debug\\cmTC_b1b89.tlog\\unsuccessfulbuild".
+          Aplicando tarea Touch a "cmTC_b1b89.dir\\Debug\\cmTC_b1b89.tlog\\cmTC_b1b89.lastbuildstate".
+        Compilaci├│n del proyecto terminada "C:\\Users\\DonKolia\\Downloads\\Custom Export Panel\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8k4kc8\\cmTC_b1b89.vcxproj" (destinos predeterminados).
         
         Compilaci├│n correcta.
             0 Advertencia(s)
             0 Errores
         
-        Tiempo transcurrido 00:00:00.75
+        Tiempo transcurrido 00:00:00.79
         
       exitCode: 0
   -

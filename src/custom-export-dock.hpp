@@ -20,8 +20,12 @@ public:
     QString getExportPath() const;
     QString getFileName() const;
 
+signals:
+    void configChanged();
+
 private slots:
     void handleBrowse();
+    void onTextChanged();
 
 private:
     QLineEdit *pathEdit;
