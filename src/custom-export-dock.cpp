@@ -4,6 +4,7 @@
 #include <QFile>
 #include <QDir>
 #include <QStandardPaths>
+#include <QFileSystemWatcher>
 
 CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     setWindowTitle("Custom Export Panel");
@@ -52,6 +53,13 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     warningLabel->hide();
     layout->addWidget(warningLabel);
 
+    // File List
+    QLabel *listLabel = new QLabel("Existing Files:", content);
+    layout->addWidget(listLabel);
+
+    fileList = new QListWidget(content);
+    layout->addWidget(fileList);
+
     layout->addStretch();
     content->setLayout(layout);
     setWidget(content);
@@ -63,6 +71,19 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     // También verificar cuando cambie el texto
     connect(pathEdit, &QLineEdit::textChanged, this, &CustomExportDock::checkFileExists);
     connect(filenameEdit, &QLineEdit::textChanged, this, &CustomExportDock::checkFileExists);
+
+    // Refresh file list when path changes
+    connect(pathEdit, &QLineEdit::textChanged, this, &CustomExportDock::refreshFileList);
+    
+    // Handle file selection
+    connect(fileList, &QListWidget::itemClicked, this, &CustomExportDock::onFileClicked);
+
+    // File System Watcher
+    fileWatcher = new QFileSystemWatcher(this);
+    connect(fileWatcher, &QFileSystemWatcher::directoryChanged, this, &CustomExportDock::onDirectoryChanged);
+
+    // Initial refresh
+    refreshFileList();
 }
 
 CustomExportDock::~CustomExportDock() {}
@@ -128,4 +149,41 @@ void CustomExportDock::checkFileExists() {
     } else {
         warningLabel->hide();
     }
+}
+
+void CustomExportDock::refreshFileList() {
+    fileList->clear();
+    QString path = pathEdit->text();
+    QDir dir(path);
+    
+    // Update Watcher
+    if (!fileWatcher->directories().isEmpty()) {
+        fileWatcher->removePaths(fileWatcher->directories());
+    }
+    
+    if (dir.exists()) {
+        fileWatcher->addPath(path);
+        
+        QStringList filters;
+        filters << "*.mp4" << "*.mkv" << "*.mov" << "*.flv" << "*.ts" << "*.m3u8";
+        dir.setNameFilters(filters);
+        dir.setFilter(QDir::Files | QDir::NoSymLinks);
+        
+        QFileInfoList list = dir.entryInfoList();
+        for (const QFileInfo &fileInfo : list) {
+             fileList->addItem(fileInfo.fileName());
+        }
+    }
+}
+
+void CustomExportDock::onDirectoryChanged(const QString &path) {
+    Q_UNUSED(path);
+    refreshFileList();
+}
+
+void CustomExportDock::onFileClicked(QListWidgetItem *item) {
+    if (!item) return;
+    QString name = item->text();
+    QFileInfo fi(name);
+    filenameEdit->setText(fi.completeBaseName());
 }

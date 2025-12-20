@@ -9,6 +9,8 @@
 #include <QWidget>
 #include <QFileDialog>
 #include <QStandardPaths>
+#include <QListWidget>
+#include <QFileSystemWatcher>
 
 class CustomExportDock : public QDockWidget {
     Q_OBJECT
@@ -23,14 +25,21 @@ public:
 signals:
     void configChanged();
 
+public slots:
+    void refreshFileList();
+
 private slots:
     void handleBrowse();
     void onTextChanged();
     void checkFileExists();
+    void onFileClicked(QListWidgetItem *item);
+    void onDirectoryChanged(const QString &path);
 
 private:
     QLineEdit *pathEdit;
     QLineEdit *filenameEdit;
     QPushButton *browseBtn;
     QLabel *warningLabel;
+    QListWidget *fileList;
+    QFileSystemWatcher *fileWatcher;
 };

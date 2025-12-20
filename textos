@@ -9,3 +9,6 @@ Binarios de OBS: obs-studio-windows-x64-407944a27
 Dependencias: windows-deps-qt6-2025-08-23-x64
 
 mejor edita tu el archivo que yo no se está todo en la carpeta descargas
+
+3.
+ahora vamos a mejorarlo, se podría añadir una manera de mostrar los archivos de la carpeta "Export Path" en un panel? para que el usuario pueda cambiar el nombre del archivo fácilmente desde el mismo panel

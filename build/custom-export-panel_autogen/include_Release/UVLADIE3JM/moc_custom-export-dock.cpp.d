@@ -1,4 +1,5 @@
 C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_autogen/include_Release/UVLADIE3JM/moc_custom-export-dock.cpp: C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/src/custom-export-dock.hpp \
+  C:/Qt/6.8.3/msvc2022_64/include/QtCore/QFileSystemWatcher \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/QStandardPaths \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20iterator.h \
@@ -6,6 +7,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20type_traits.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20utility.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q23utility.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtCore/qabstractitemmodel.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qanystringview.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qarraydata.h \
@@ -43,6 +45,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfile.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfiledevice.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfileinfo.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfilesystemwatcher.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qflags.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfloat16.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qforeach.h \
@@ -55,6 +58,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qhashfunctions.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qiodevice.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qiodevicebase.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtCore/qitemselectionmodel.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qiterable.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qiterator.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qlatin1stringview.h \
@@ -81,6 +85,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qprocessordetection.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qrect.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qrefcount.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtCore/qregularexpression.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qscopedpointer.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qscopeguard.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qset.h \
@@ -162,6 +167,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qtguiexports.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qtguiglobal.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qtransform.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtGui/qvalidator.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qwindowdefs.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qwindowdefs_win.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QDockWidget \
@@ -169,10 +175,16 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QHBoxLayout \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QLineEdit \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QListWidget \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QPushButton \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QWidget \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractbutton.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractitemdelegate.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractitemview.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractscrollarea.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractslider.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractspinbox.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qboxlayout.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qdialog.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qdockwidget.h \
@@ -183,8 +195,16 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlineedit.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlistview.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qpushbutton.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qrubberband.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qsizepolicy.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qslider.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qstyle.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qstyleoption.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtabbar.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtabwidget.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
