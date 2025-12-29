@@ -16,6 +16,8 @@
 #include <QAction>
 #include <QInputDialog>
 #include <QMessageBox>
+#include <QDesktopServices>
+#include <QUrl>
 
 class CustomExportDock : public QDockWidget {
     Q_OBJECT
@@ -40,6 +42,7 @@ private slots:
     void onFileClicked(const QModelIndex &index);
     void showContextMenu(const QPoint &pos);
     void renameFile(const QModelIndex &index);
+    void onDoubleClicked(const QModelIndex &index);
 
 private:
     QLineEdit *pathEdit;

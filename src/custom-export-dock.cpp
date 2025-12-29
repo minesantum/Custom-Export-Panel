@@ -69,6 +69,14 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     fileList->setRootIsDecorated(false);
     fileList->setSortingEnabled(true);
     fileList->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    fileList->setAlternatingRowColors(true);
+    
+    // Enable Drag and Drop (Native behavior)
+    fileList->setDragEnabled(true);
+    fileList->setDragDropMode(QAbstractItemView::DragOnly);
+    
+    // Removed Custom CSS to use Native Windows Theme
+    
     layout->addWidget(fileList);
 
     layout->addStretch();
@@ -88,6 +96,9 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     
     // Handle file selection
     connect(fileList, &QTreeView::clicked, this, &CustomExportDock::onFileClicked);
+    
+    // Handle Double Click (Open File)
+    connect(fileList, &QTreeView::doubleClicked, this, &CustomExportDock::onDoubleClicked);
     
     // Enable context menu
     fileList->setContextMenuPolicy(Qt::CustomContextMenu);
@@ -182,13 +193,51 @@ void CustomExportDock::showContextMenu(const QPoint &pos) {
     QModelIndex index = fileList->indexAt(pos);
     if (!index.isValid()) return;
 
+    QString filePath = fileModel->filePath(index);
     QMenu contextMenu(tr("Context menu"), this);
+    
+    // 1. Open
+    QAction *openAction = new QAction(tr("Open"), this);
+    connect(openAction, &QAction::triggered, this, [this, index]() {
+        onDoubleClicked(index);
+    });
+    contextMenu.addAction(openAction);
+
+    // 2. Show in Explorer
+    QAction *showInExplorerAction = new QAction(tr("Show in Explorer"), this);
+    connect(showInExplorerAction, &QAction::triggered, this, [this, filePath]() {
+        QDesktopServices::openUrl(QUrl::fromLocalFile(QFileInfo(filePath).absolutePath()));
+    });
+    contextMenu.addAction(showInExplorerAction);
+    
+    contextMenu.addSeparator();
+
+    // 3. Rename
     QAction *renameAction = new QAction(tr("Rename"), this);
     connect(renameAction, &QAction::triggered, this, [this, index]() {
         renameFile(index);
     });
     contextMenu.addAction(renameAction);
+
+    // 4. Delete
+    QAction *deleteAction = new QAction(tr("Delete"), this);
+    connect(deleteAction, &QAction::triggered, this, [this, filePath]() {
+        if (QMessageBox::question(this, tr("Delete File"), 
+            tr("Are you sure you want to delete this file?\n") + filePath,
+            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes) {
+            
+            QFile::remove(filePath);
+        }
+    });
+    contextMenu.addAction(deleteAction);
+
     contextMenu.exec(fileList->mapToGlobal(pos));
+}
+
+void CustomExportDock::onDoubleClicked(const QModelIndex &index) {
+    if (!index.isValid()) return;
+    QString filePath = fileModel->filePath(index);
+    QDesktopServices::openUrl(QUrl::fromLocalFile(filePath));
 }
 
 void CustomExportDock::renameFile(const QModelIndex &index) {

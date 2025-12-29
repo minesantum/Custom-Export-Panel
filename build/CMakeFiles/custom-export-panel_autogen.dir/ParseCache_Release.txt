@@ -2,6 +2,7 @@
 C:/Users/DonKolia/Downloads/Custom-Export-Panel/src/custom-export-dock.hpp
  mmc:Q_OBJECT
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/QStandardPaths
+ mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/QUrl
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20functional.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20iterator.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20memory.h
@@ -139,12 +140,14 @@ C:/Users/DonKolia/Downloads/Custom-Export-Panel/src/custom-export-dock.hpp
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/qxptype_traits.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtCore/qyieldcpu.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/QAction
+ mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/QDesktopServices
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/QFileSystemModel
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qaction.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qbitmap.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qbrush.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qcolor.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qcursor.h
+ mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qdesktopservices.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfilesystemmodel.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfont.h
  mdp:C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfontinfo.h
