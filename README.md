@@ -4,12 +4,19 @@ Custom plugin for OBS Studio that adds an export panel with custom filenames and
 
 ## Features
 
-- 🎯 Custom export panel integrated into OBS
-- 📂 **Native File Explorer**: Tree view with icons and details. Supports **Double Click** to open files, **Drag & Drop**, and a full context menu (Open, Show in Explorer, Rename, Delete).
-- ⚠️ Visual warning when a file with the same name already exists
-- 📝 Customizable filenames
-- 🛡️ **Safe Renaming**: Rename your files without worrying about accidentally deleting the extension.
-- 🎨 Interface integrated with Qt6
+- 🎯 **Seamless Integration**: Custom export panel integrated directly into the OBS interface.
+- 📂 **Native File Explorer**:
+  - Full-featured **Tree View** with native look and feel.
+  - **Double Click** to open files instantly.
+  - **Drag & Drop** support for easy file management.
+  - **Context Menu**: Right-click to Open, Show in Explorer, Rename (safely preserving extensions), or Delete files.
+- 🔒 **Robust Settings Enforcement**:
+  - Actively **locks** critical OBS settings to prevent conflicts.
+  - Prevents modification of **Recording Path**, **Filename Formatting**, **Auto-Remux**, and **Overwrite** settings in both Simple and Advanced output modes.
+  - **Language Independent**: Works on any OBS installation regardless of the selected language (English, Spanish, etc.) by targeting internal component IDs.
+- ⚠️ **Visual Safety**: Real-time warnings when a file name already exists to prevent accidental overwrites.
+- 🛡️ **Safe Renaming**: Intelligent renaming dialog that preserves file extensions automatically.
+- 🎨 **Qt6 Interface**: Native performance and styling.
 
 ## Installation
 
