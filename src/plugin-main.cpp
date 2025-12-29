@@ -13,6 +13,8 @@
 #include <QFileInfo>
 #include <QMessageBox>
 #include <QRegularExpression>
+#include <QCheckBox>
+#include <QLabel>
 
 OBS_DECLARE_MODULE()
 
@@ -181,25 +183,117 @@ void frontend_event(enum obs_frontend_event event, void *data) {
     }
 }
 
+#include <QApplication>
+#include <QLineEdit>
+#include <QAbstractButton>
+#include <QTimer>
+
+// Enforcer to actively police the Settings Dialog
+class SettingsEnforcer : public QObject {
+    Q_OBJECT
+public:
+    SettingsEnforcer() {
+        // Run a check every 500ms
+        QTimer *timer = new QTimer(this);
+        connect(timer, &QTimer::timeout, this, &SettingsEnforcer::enforce);
+        timer->start(500);
+    }
+
+private slots:
+    void enforce() {
+        if (!exportDock || !exportDock->isVisible()) return;
+
+        const auto topWidgets = QApplication::topLevelWidgets();
+        for (QWidget *topWidget : topWidgets) {
+            
+            // STRATEGY: Internal Object Name Search (Language Independent)
+            
+            // 1. Lock LineEdits (Paths, Formatting, Prefixes)
+            auto lineEdits = topWidget->findChildren<QLineEdit*>();
+            for (QLineEdit *le : lineEdits) {
+                QString name = le->objectName();
+                bool isTarget = false;
+
+                if (name == "simpleOutputPath") isTarget = true;
+                else if (name == "advOutRecPath") isTarget = true;
+                else if (name == "filenameFormatting") isTarget = true;
+                else if (name == "simpleRBPrefix") isTarget = true;
+                else if (name == "simpleRBSuffix") isTarget = true;
+                
+                // Fallback
+                else if (name.contains("Rec", Qt::CaseInsensitive) && name.contains("Path", Qt::CaseInsensitive)) isTarget = true;
+                
+                if (isTarget) {
+                    lockWidget(le, name);
+                    // Force text for paths only, not formatting fields which might just need to be read-only
+                    if (name.contains("Path", Qt::CaseInsensitive)) {
+                         if (le->text() != "Custom Export Panel Options Enabled") {
+                            le->setText("Custom Export Panel Options Enabled");
+                        }
+                    }
+                }
+            }
+            
+            // 2. Lock Checkboxes (Overwrite, AutoRemux)
+            auto checkBoxes = topWidget->findChildren<QCheckBox*>();
+            for (QCheckBox *cb : checkBoxes) {
+                QString name = cb->objectName();
+                if (name == "overwriteIfExists" || name == "autoRemux") {
+                    lockWidget(cb, name);
+                }
+            }
+            
+            // 3. Lock Browse Buttons
+            auto buttons = topWidget->findChildren<QAbstractButton*>();
+            for (QAbstractButton *btn : buttons) {
+                QString name = btn->objectName();
+                // Avoid locking the checkboxes again if they appear as buttons
+                if (qobject_cast<QCheckBox*>(btn)) continue;
+
+                if ((name.contains("Browse", Qt::CaseInsensitive)) &&
+                    (name.contains("simple", Qt::CaseInsensitive) || name.contains("Rec", Qt::CaseInsensitive))) {
+                    
+                    if (btn->isEnabled()) {
+                        btn->setEnabled(false);
+                        btn->setToolTip("Managed by Custom Export Panel");
+                    }
+                }
+            }
+        }
+    }
+
+    void lockWidget(QWidget *w, const QString &debugName) {
+        if (!w->isVisible()) return;
+        if (w->isEnabled()) {
+             w->setEnabled(false);
+             w->setToolTip("Managed by Custom Export Panel");
+             
+             // Different handling for read-only based on type
+             if (QLineEdit *le = qobject_cast<QLineEdit*>(w)) {
+                 if (!le->isReadOnly()) le->setReadOnly(true);
+             }
+             
+             blog(LOG_INFO, "[CustomExport] Locked widget (%s)", debugName.toUtf8().constData());
+        }
+    }
+};
+
+#include "plugin-main.moc"
+
+SettingsEnforcer *g_settingsEnforcer = nullptr;
+
 bool obs_module_load(void) {
     blog(LOG_INFO, "[CustomExport] obs_module_load called");
     
     // Add event callback
     obs_frontend_add_event_callback(frontend_event, nullptr);
-    blog(LOG_INFO, "[CustomExport] Event callback registered");
     
     // Create Dock
-    blog(LOG_INFO, "[CustomExport] Creating CustomExportDock...");
     exportDock = new CustomExportDock();
-    blog(LOG_INFO, "[CustomExport] CustomExportDock created at %p", exportDock);
-    
-    
-    blog(LOG_INFO, "[CustomExport] Registering dock with OBS...");
-    
-    // Usar add_dock_by_id que añade automáticamente al menú
     obs_frontend_add_dock_by_id("CustomExportPanel", "Custom Export Panel", exportDock);
     
-    blog(LOG_INFO, "[CustomExport] Dock registered successfully");
+    // Install Global Enforcer
+    g_settingsEnforcer = new SettingsEnforcer();
     
     return true;
 }
