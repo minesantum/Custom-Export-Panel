@@ -5,7 +5,7 @@ Custom plugin for OBS Studio that adds an export panel with custom filenames and
 ## Features
 
 - 🎯 Custom export panel integrated into OBS
-- 📂 **Native File Explorer**: Tree view with icons and details (size, date) to manage your recordings.
+- 📂 **Native File Explorer**: Tree view with icons and details. Supports **Double Click** to open files, **Drag & Drop**, and a full context menu (Open, Show in Explorer, Rename, Delete).
 - ⚠️ Visual warning when a file with the same name already exists
 - 📝 Customizable filenames
 - 🛡️ **Safe Renaming**: Rename your files without worrying about accidentally deleting the extension.
