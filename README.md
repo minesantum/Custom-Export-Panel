@@ -1,123 +1,126 @@
-# Custom Export Panel - Plugin para OBS Studio
+# Custom Export Panel - OBS Studio Plugin
 
-Plugin personalizado para OBS Studio que agrega un panel de exportación con nombres de archivo personalizados y advertencias visuales cuando un archivo ya existe.
+Custom plugin for OBS Studio that adds an export panel with custom filenames and visual warnings when a file already exists.
 
-## Características
+## Features
 
-- 🎯 Panel de exportación personalizado integrado en OBS
-- ⚠️ Advertencia visual cuando un archivo con el mismo nombre ya existe
-- 📝 Nombres de archivo personalizables
-- 🎨 Interfaz integrada con Qt6
+- 🎯 Custom export panel integrated into OBS
+- 📂 **Native File Explorer**: Tree view with icons and details (size, date) to manage your recordings.
+- ⚠️ Visual warning when a file with the same name already exists
+- 📝 Customizable filenames
+- 🛡️ **Safe Renaming**: Rename your files without worrying about accidentally deleting the extension.
+- 🎨 Interface integrated with Qt6
 
-## Instalación
+## Installation
 
-### Desde Releases (Recomendado)
+### From Releases (Recommended)
 
-1. Ve a la [página de Releases](https://github.com/minesantum/Custom-Export-Panel/releases)
-2. Descarga la última versión de `custom-export-panel.dll`
-3. Copia el archivo a tu carpeta de plugins de OBS:
+1. Go to the [Releases page](https://github.com/minesantum/Custom-Export-Panel/releases)
+2. Download the latest version of `custom-export-panel.dll`
+3. Copy the file to your OBS plugins folder:
    - Windows: `C:\Program Files\obs-studio\obs-plugins\64bit\`
-4. Reinicia OBS Studio
+4. Restart OBS Studio
 
-### Compilación Manual
+### Manual Compilation
 
-Si prefieres compilar el plugin tú mismo:
+If you prefer to compile the plugin yourself:
 
-1. **Requisitos:**
-   - CMake 3.16 o superior
-   - Visual Studio 2019 o superior
+1. **Requirements:**
+   - CMake 3.16 or higher
+   - Visual Studio 2019 or higher
    - Qt 6.8.3
-   - OBS Studio 32.0.4 (binarios y headers)
+   - OBS Studio 32.0.4 (binaries and headers)
 
-2. **Compilar:**
+2. **Compile:**
    ```bash
-   # Edita compile.bat con las rutas correctas a tus dependencias
+   # Edit compile.bat with the correct paths to your dependencies
    compile.bat
    ```
 
-3. **Instalar:**
+3. **Install:**
    ```bash
    install_plugin.bat
    ```
 
-## Uso
+## Usage
 
-1. Abre OBS Studio
-2. El panel de exportación personalizado aparecerá en la interfaz
-3. Configura tu nombre de archivo personalizado
-4. Si un archivo con ese nombre ya existe, verás una advertencia visual
+1. Open OBS Studio
+2. The custom export panel will appear in the interface
+3. Configure your custom filename
+4. If a file with that name already exists, you will see a visual warning
 
-## Configuración
+## Configuration
 
-Puedes crear un archivo de configuración en:
+You can create a configuration file at:
 ```
 %APPDATA%\obs-studio\plugin_config\custom-export-panel\export_config.ini
 ```
 
-Ver `export_config.ini.example` para opciones disponibles.
+See `export_config.ini.example` for available options.
 
-## Desarrollo
+## Development
 
-### Estructura del Proyecto
+### Project Structure
 
 ```
 Custom Export Panel/
 ├── .github/
+├── .github/
 │   └── workflows/
 │       └── build-and-release.yml  # GitHub Actions workflow
 ├── src/
-│   ├── plugin-main.cpp            # Punto de entrada del plugin
-│   ├── custom-export-dock.hpp     # Header del panel
-│   └── custom-export-dock.cpp     # Implementación del panel
-├── include/                        # Headers de OBS
-├── libs/                          # Bibliotecas de OBS
-├── CMakeLists.txt                 # Configuración de CMake
-└── compile.bat                    # Script de compilación
+│   ├── plugin-main.cpp            # Plugin entry point
+│   ├── custom-export-dock.hpp     # Panel header
+│   └── custom-export-dock.cpp     # Panel implementation
+├── include/                        # OBS Headers
+├── libs/                          # OBS Libraries
+├── CMakeLists.txt                 # CMake Configuration
+└── compile.bat                    # Compilation script
 ```
 
-### Crear una Nueva Release
+### Create a New Release
 
-Ver [RELEASES.md](RELEASES.md) para instrucciones detalladas sobre cómo crear releases automáticas.
+See [RELEASES.md](RELEASES.md) for detailed instructions on how to create automatic releases.
 
-**Resumen rápido:**
+**Quick summary:**
 ```bash
 git tag v1.0.0
 git push origin v1.0.0
 ```
 
-GitHub Actions automáticamente compilará y publicará la release.
+GitHub Actions will automatically compile and publish the release.
 
-## Tecnologías Utilizadas
+## Technologies Used
 
-- **C++17** - Lenguaje principal
-- **Qt6** - Framework de interfaz gráfica
-- **CMake** - Sistema de compilación
-- **OBS Studio API** - Integración con OBS
+- **C++17** - Main language
+- **Qt6** - Graphical interface framework
+- **CMake** - Build system
+- **OBS Studio API** - OBS Integration
 
-## Contribuir
+## Contributing
 
-Las contribuciones son bienvenidas! Por favor:
+Contributions are welcome! Please:
 
-1. Fork el repositorio
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
+1. Fork the repository
+2. Create a branch for your feature (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Licencia
+## License
 
-Este proyecto es de código abierto y está disponible bajo una licencia permisiva.
+This project is open source and is available under a permissive license.
 
-## Creador
+## Creator
 
 **DonKolia**
 
-## Soporte
+## Support
 
-Si encuentras algún problema o tienes sugerencias:
-- Abre un [Issue](https://github.com/minesantum/Custom-Export-Panel/issues)
-- Revisa los [Releases](https://github.com/minesantum/Custom-Export-Panel/releases) para la última versión
+If you find any issues or have suggestions:
+- Open an [Issue](https://github.com/minesantum/Custom-Export-Panel/issues)
+- Check [Releases](https://github.com/minesantum/Custom-Export-Panel/releases) for the latest version
 
 ---
 
-⭐ Si este plugin te resulta útil, considera darle una estrella al repositorio!
+⭐ If you find this plugin useful, consider giving the repository a star!

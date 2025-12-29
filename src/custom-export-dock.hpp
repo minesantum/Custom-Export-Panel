@@ -9,8 +9,9 @@
 #include <QWidget>
 #include <QFileDialog>
 #include <QStandardPaths>
-#include <QListWidget>
-#include <QFileSystemWatcher>
+#include <QTreeView>
+#include <QFileSystemModel>
+#include <QHeaderView>
 #include <QMenu>
 #include <QAction>
 #include <QInputDialog>
@@ -36,16 +37,15 @@ private slots:
     void handleBrowse();
     void onTextChanged();
     void checkFileExists();
-    void onFileClicked(QListWidgetItem *item);
-    void onDirectoryChanged(const QString &path);
+    void onFileClicked(const QModelIndex &index);
     void showContextMenu(const QPoint &pos);
-    void renameFile(QListWidgetItem *item);
+    void renameFile(const QModelIndex &index);
 
 private:
     QLineEdit *pathEdit;
     QLineEdit *filenameEdit;
     QPushButton *browseBtn;
     QLabel *warningLabel;
-    QListWidget *fileList;
-    QFileSystemWatcher *fileWatcher;
+    QTreeView *fileList;
+    QFileSystemModel *fileModel;
 };

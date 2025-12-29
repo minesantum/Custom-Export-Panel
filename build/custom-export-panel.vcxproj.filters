@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\build\custom-export-panel_autogen\mocs_compilation_Debug.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\build\custom-export-panel_autogen\mocs_compilation_Debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\src\plugin-main.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\src\plugin-main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\src\custom-export-dock.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\src\custom-export-dock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\build\custom-export-panel_autogen\mocs_compilation_Release.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\build\custom-export-panel_autogen\mocs_compilation_Release.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\build\custom-export-panel_autogen\mocs_compilation_MinSizeRel.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\build\custom-export-panel_autogen\mocs_compilation_MinSizeRel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom Export Panel\build\custom-export-panel_autogen\mocs_compilation_RelWithDebInfo.cpp">
+    <ClCompile Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\build\custom-export-panel_autogen\mocs_compilation_RelWithDebInfo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\DonKolia\Downloads\Custom Export Panel\src\custom-export-dock.hpp">
+    <ClInclude Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\src\custom-export-dock.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\DonKolia\Downloads\Custom Export Panel\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\DonKolia\Downloads\Custom-Export-Panel\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">
-      <UniqueIdentifier>{6FB3D18F-F887-3312-A3FB-6A2391C8C88F}</UniqueIdentifier>
+      <UniqueIdentifier>{DA0B700F-3D14-3716-8382-7CB85C1CFE06}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{6AEC21C6-6B98-32D9-89EF-C340C8BB0053}</UniqueIdentifier>
+      <UniqueIdentifier>{964B4DC1-C802-3BD7-949D-9CEBCE2EEC1F}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

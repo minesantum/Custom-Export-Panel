@@ -57,7 +57,18 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     QLabel *listLabel = new QLabel("Existing Files:", content);
     layout->addWidget(listLabel);
 
-    fileList = new QListWidget(content);
+    fileModel = new QFileSystemModel(this);
+    fileModel->setFilter(QDir::Files | QDir::NoDotAndDotDot);
+    QStringList filters;
+    filters << "*.mp4" << "*.mkv" << "*.mov" << "*.flv" << "*.ts" << "*.m3u8";
+    fileModel->setNameFilters(filters);
+    fileModel->setNameFilterDisables(false);
+
+    fileList = new QTreeView(content);
+    fileList->setModel(fileModel);
+    fileList->setRootIsDecorated(false);
+    fileList->setSortingEnabled(true);
+    fileList->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
     layout->addWidget(fileList);
 
     layout->addStretch();
@@ -76,15 +87,11 @@ CustomExportDock::CustomExportDock(QWidget *parent) : QDockWidget(parent) {
     connect(pathEdit, &QLineEdit::textChanged, this, &CustomExportDock::refreshFileList);
     
     // Handle file selection
-    connect(fileList, &QListWidget::itemClicked, this, &CustomExportDock::onFileClicked);
+    connect(fileList, &QTreeView::clicked, this, &CustomExportDock::onFileClicked);
     
     // Enable context menu
     fileList->setContextMenuPolicy(Qt::CustomContextMenu);
-    connect(fileList, &QListWidget::customContextMenuRequested, this, &CustomExportDock::showContextMenu);
-
-    // File System Watcher
-    fileWatcher = new QFileSystemWatcher(this);
-    connect(fileWatcher, &QFileSystemWatcher::directoryChanged, this, &CustomExportDock::onDirectoryChanged);
+    connect(fileList, &QTreeView::customContextMenuRequested, this, &CustomExportDock::showContextMenu);
 
     // Initial refresh
     refreshFileList();
@@ -156,82 +163,69 @@ void CustomExportDock::checkFileExists() {
 }
 
 void CustomExportDock::refreshFileList() {
-    fileList->clear();
     QString path = pathEdit->text();
-    QDir dir(path);
-    
-    // Update Watcher
-    if (!fileWatcher->directories().isEmpty()) {
-        fileWatcher->removePaths(fileWatcher->directories());
-    }
-    
-    if (dir.exists()) {
-        fileWatcher->addPath(path);
-        
-        QStringList filters;
-        filters << "*.mp4" << "*.mkv" << "*.mov" << "*.flv" << "*.ts" << "*.m3u8";
-        dir.setNameFilters(filters);
-        dir.setFilter(QDir::Files | QDir::NoSymLinks);
-        
-        QFileInfoList list = dir.entryInfoList();
-        for (const QFileInfo &fileInfo : list) {
-             fileList->addItem(fileInfo.fileName());
-        }
-    }
+    // QFileSystemModel handles logic internally, we just set root path for it to load
+    // and set the view's root index
+    QModelIndex rootIndex = fileModel->setRootPath(path);
+    fileList->setRootIndex(rootIndex);
 }
 
-void CustomExportDock::onDirectoryChanged(const QString &path) {
-    Q_UNUSED(path);
-    refreshFileList();
-}
-
-void CustomExportDock::onFileClicked(QListWidgetItem *item) {
-    if (!item) return;
-    QString name = item->text();
+void CustomExportDock::onFileClicked(const QModelIndex &index) {
+    if (!index.isValid()) return;
+    QString name = fileModel->fileName(index);
     QFileInfo fi(name);
+    // Avoid updating if it's not a file we care about (though filter handles most)
     filenameEdit->setText(fi.completeBaseName());
 }
 
 void CustomExportDock::showContextMenu(const QPoint &pos) {
-    QListWidgetItem *item = fileList->itemAt(pos);
-    if (!item) return;
+    QModelIndex index = fileList->indexAt(pos);
+    if (!index.isValid()) return;
 
     QMenu contextMenu(tr("Context menu"), this);
     QAction *renameAction = new QAction(tr("Rename"), this);
-    connect(renameAction, &QAction::triggered, this, [this, item]() {
-        renameFile(item);
+    connect(renameAction, &QAction::triggered, this, [this, index]() {
+        renameFile(index);
     });
     contextMenu.addAction(renameAction);
     contextMenu.exec(fileList->mapToGlobal(pos));
 }
 
-void CustomExportDock::renameFile(QListWidgetItem *item) {
-    if (!item) return;
+void CustomExportDock::renameFile(const QModelIndex &index) {
+    if (!index.isValid()) return;
     
-    QString oldName = item->text();
+    QString oldName = fileModel->fileName(index);
+    QFileInfo fi(oldName);
+    QString baseName = fi.completeBaseName();
+    QString suffix = fi.suffix();
+
     QString path = pathEdit->text();
     QDir dir(path);
-    QString oldPath = dir.filePath(oldName);
 
     bool ok;
-    QString newName = QInputDialog::getText(this, tr("Rename File"),
+    QString newBaseName = QInputDialog::getText(this, tr("Rename File"),
                                           tr("New name:"), QLineEdit::Normal,
-                                          oldName, &ok);
+                                          baseName, &ok);
     
-    if (ok && !newName.isEmpty() && newName != oldName) {
-        QString newPath = dir.filePath(newName);
+    if (ok && !newBaseName.isEmpty() && newBaseName != baseName) {
+        // Reconstruct full filename with original extension
+        QString finalName = newBaseName;
+        if (!suffix.isEmpty()) {
+            finalName += "." + suffix;
+        }
+
+        QString newPath = dir.filePath(finalName);
         
         if (QFile::exists(newPath)) {
             QMessageBox::warning(this, tr("Rename Failed"), tr("A file with that name already exists."));
             return;
         }
 
-        if (dir.rename(oldName, newName)) {
+        if (dir.rename(oldName, finalName)) {
             // Update the filename edit if we just renamed the selected file
-            if (filenameEdit->text() == QFileInfo(oldName).completeBaseName()) {
-                 filenameEdit->setText(QFileInfo(newName).completeBaseName());
+            if (filenameEdit->text() == baseName) {
+                 filenameEdit->setText(QFileInfo(finalName).completeBaseName());
             }
-            // File watcher handles the list update
         } else {
             QMessageBox::critical(this, tr("Rename Failed"), tr("Could not rename the file. Check permissions."));
         }

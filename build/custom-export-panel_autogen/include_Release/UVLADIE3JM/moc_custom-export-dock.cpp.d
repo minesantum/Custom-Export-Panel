@@ -1,5 +1,4 @@
-C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_autogen/include_Release/UVLADIE3JM/moc_custom-export-dock.cpp: C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/src/custom-export-dock.hpp \
-  C:/Qt/6.8.3/msvc2022_64/include/QtCore/QFileSystemWatcher \
+C:/Users/DonKolia/Downloads/Custom-Export-Panel/build/custom-export-panel_autogen/include_Release/UVLADIE3JM/moc_custom-export-dock.cpp: C:/Users/DonKolia/Downloads/Custom-Export-Panel/src/custom-export-dock.hpp \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/QStandardPaths \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20functional.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/q20iterator.h \
@@ -45,7 +44,6 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfile.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfiledevice.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfileinfo.h \
-  C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfilesystemwatcher.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qflags.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qfloat16.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qforeach.h \
@@ -139,11 +137,13 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qxptype_traits.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtCore/qyieldcpu.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/QAction \
+  C:/Qt/6.8.3/msvc2022_64/include/QtGui/QFileSystemModel \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qaction.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qbitmap.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qbrush.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qcolor.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qcursor.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfilesystemmodel.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfont.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfontinfo.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtGui/qfontmetrics.h \
@@ -174,13 +174,14 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QDockWidget \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QFileDialog \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QHBoxLayout \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QHeaderView \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QInputDialog \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QLabel \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QLineEdit \
-  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QListWidget \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QMenu \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QMessageBox \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QPushButton \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QTreeView \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QVBoxLayout \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/QWidget \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qabstractbutton.h \
@@ -196,13 +197,12 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qfiledialog.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qframe.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qgridlayout.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qheaderview.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qinputdialog.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlabel.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlayout.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlayoutitem.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlineedit.h \
-  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlistview.h \
-  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qlistwidget.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qmenu.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qmessagebox.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qpushbutton.h \
@@ -213,6 +213,7 @@ C:/Users/DonKolia/Downloads/Custom\ Export\ Panel/build/custom-export-panel_auto
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qstyleoption.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtabbar.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtabwidget.h \
+  C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtreeview.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgets-config.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgetsexports.h \
   C:/Qt/6.8.3/msvc2022_64/include/QtWidgets/qtwidgetsglobal.h \
